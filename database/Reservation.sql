@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS Reservation (
 
 -- Show all reservations
 
+SELECT * FROM Reservation;
+
 -- Show all reservations by specific date
 
 -- Show all reservations by specific time
