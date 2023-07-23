@@ -8,3 +8,13 @@ CREATE TABLE IF NOT EXISTS Reservation (
     ContactPhone TEXT,
     PRIMARY KEY(Id)
 );
+
+-- Create reservation
+
+-- Show all reservations
+
+-- Show all reservations by specific date
+
+-- Show all reservations by specific time
+
+-- Show all reservations by specific date and time
