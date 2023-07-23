@@ -7,7 +7,10 @@ CREATE TABLE IF NOT EXISTS Tables (
 
 -- Create table
 
-INSERT INTO Tables(
+INSERT INTO Tables
+(TableNumber, NumberOfSeats)
+VALUES
+(1,4)
 
 -- Show all tables
 
@@ -15,4 +18,4 @@ SELECT * FROM Tables;
 
 -- Show specific tables
 
-SELECT * FROM Tables WHERE Id=1;
+SELECT * FROM Tables WHERE TableNumber=1;

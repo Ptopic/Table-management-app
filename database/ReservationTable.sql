@@ -6,3 +6,18 @@ CREATE TABLE IF NOT EXISTS ReservationTable (
     FOREIGN KEY (ReservationId) REFERENCES Reservation(Id),
     FOREIGN KEY (TableId) REFERENCES Tables(Id)
 );
+
+-- Link reservation to certain table
+
+INSERT INTO ReservationTable
+(ReservationId, TableId)
+VALUES
+(1,1)
+
+-- Show all tables for certain reservation
+
+SELECT * FROM Tables WHERE Id IN (SELECT TableId FROM ReservationTable WHERE ReservationId=1);
+
+-- Show all
+
+SELECT * FROM ReservationTable;
