@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS Tables (
     Id INT NOT NULL AUTO_INCREMENT,
-    TableNumber INT NOT NULL,
+    TableNumber INT NOT NULL UNIQUE,
     NumberOfSeats INT NOT NULL,
     PRIMARY KEY(Id)
 );
@@ -11,6 +11,11 @@ INSERT INTO Tables
 (TableNumber, NumberOfSeats)
 VALUES
 (1,4)
+
+-- Delete table
+
+DELETE FROM Tables
+WHERE TableNumber=1;
 
 -- Show all tables
 

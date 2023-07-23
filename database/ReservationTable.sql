@@ -3,8 +3,8 @@ CREATE TABLE IF NOT EXISTS ReservationTable (
     ReservationId INT NOT NULL,
     TableId INT NOT NULL,
     PRIMARY KEY(Id),
-    FOREIGN KEY (ReservationId) REFERENCES Reservation(Id),
-    FOREIGN KEY (TableId) REFERENCES Tables(Id)
+    FOREIGN KEY (ReservationId) REFERENCES Reservation(Id) ON DELETE CASCADE,
+    FOREIGN KEY (TableId) REFERENCES Tables(Id) ON DELETE CASCADE
 );
 
 -- Link reservation to certain table
