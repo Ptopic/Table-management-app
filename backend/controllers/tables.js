@@ -9,13 +9,13 @@ exports.createTable = async (req, res) => {
 	const { tableNumber, numberOfSeats } = req.body;
 
 	if (!tableNumber || !numberOfSeats) {
-		return sendResponse(400, 'Table number or number of seats missing');
+		return sendResponse(400, 'Table number or number of seats missing', res);
 	}
 
 	const createTableQuery = `INSERT INTO Tables
-    (TableNumber, NumberOfSeats)
+    (Id, TableNumber, NumberOfSeats)
     VALUES
-    (${tableNumber},${numberOfSeats})`;
+    (${tableNumber}, ${tableNumber},${numberOfSeats})`;
 
 	db.query(createTableQuery, (err, result) => {
 		if (err) {
@@ -28,11 +28,35 @@ exports.createTable = async (req, res) => {
 	});
 };
 
+exports.editTable = async (req, res) => {
+	const { tableNumber, numberOfSeats } = req.body;
+
+	if (!tableNumber || !numberOfSeats) {
+		return sendResponse(400, 'Table number or number of seats missing', res);
+	}
+
+	const createTableQuery = `
+	UPDATE Tables
+    SET TableNumber="${tableNumber}", NumberOfSeats="${numberOfSeats}"
+	WHERE Id="${tableNumber}"
+	`;
+
+	db.query(createTableQuery, (err, result) => {
+		if (err) {
+			return sendResponse(400, 'Failed to create table', res);
+		}
+
+		return res
+			.status(200)
+			.send({ success: true, msg: `Edited table number ${tableNumber}` });
+	});
+};
+
 exports.deleteTable = async (req, res) => {
 	const { tableNumber } = req.body;
 
 	if (!tableNumber) {
-		return sendResponse(400, 'Table number missing');
+		return sendResponse(400, 'Table number missing', res);
 	}
 
 	const deleteTableQuery = `DELETE FROM Tables
