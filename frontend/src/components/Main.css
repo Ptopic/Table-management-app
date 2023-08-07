@@ -35,3 +35,79 @@
     padding-bottom: 1.4rem;
     color: black;
 }
+
+/* Add reservation */
+
+.add-reservation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.close-button {
+    margin-bottom: 1.6rem !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    align-self: start !important;
+    padding: 0 !important;
+}
+
+.add-reservation-container {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .09);
+    padding: 2rem;
+    border-radius: .8rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-reservation-container h1 {
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+}
+
+.add-reservation-container p {
+    font-size: 1.6rem;
+    padding-bottom: 0.6rem;
+    padding-top: 1rem;
+}
+
+.dodaj-rezervaciju-button {
+    border: none;
+    outline: none;
+    align-self: start;
+    border-radius: 0.6rem;
+    padding: 1rem 3.5rem;
+    background-color: #0283d2;
+    color: white;
+    margin-top: 2rem;
+}
+
+.add-reservation-container input {
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 1rem 0 1rem 1rem;
+    border-bottom: 2px solid #0283d2;
+    font-size: 1.6rem;
+}
+
+.add-reservation-container input:focus {
+    border-radius: 0.6rem;
+    border: 2px solid #0283d2;
+}
+
+.error {
+    color: #ed5e69;
+    font-size: 1.4rem;
+    padding-bottom: 0.4rem;
+}

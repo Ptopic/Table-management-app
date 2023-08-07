@@ -9,6 +9,7 @@ import Stolovi from './screens/Stolovi';
 
 import store from './redux/store';
 import { Provider } from 'react-redux';
+import Rezervacije from './screens/Rezervacije';
 
 const router = createBrowserRouter([
 	{
@@ -21,11 +22,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/rezervacije',
-		element: <Home />,
-	},
-	{
-		path: '/dodaj-rezervaciju',
-		element: <Home />,
+		element: <Rezervacije />,
 	},
 ]);
 

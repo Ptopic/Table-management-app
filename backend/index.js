@@ -6,14 +6,25 @@ const swaggerUI = require('swagger-ui-express');
 const expressJSDocSwagger = require('express-jsdoc-swagger');
 const port = 3001;
 
-const rateLimit = require('express-rate-limit');
+const { RateLimiterMemory } = require('rate-limiter-flexible');
 
-const limiter = rateLimit({
-	windowMs: 10 * 60 * 1000, // 15 minutes
-	max: 100, // Limit each IP to 100 requests
-	standardHeaders: true,
-	legacyHeaders: false,
-});
+const options = {
+	points: 10000, // 6 points
+	duration: 15 * 60, // Per second
+};
+
+const rateLimiter = new RateLimiterMemory(options);
+
+const rateLimiterMiddleware = (req, res, next) => {
+	rateLimiter
+		.consume(req.ip)
+		.then(() => {
+			next();
+		})
+		.catch(() => {
+			res.status(429).json({ message: TOO_MANY_REQUESTS_MESSAGE });
+		});
+};
 
 require('dotenv').config();
 
@@ -26,7 +37,7 @@ app.use(epxress.json());
 app.use(cors());
 
 // Rate limiter usage
-app.use(limiter);
+app.use(rateLimiterMiddleware);
 
 // Using main router
 app.use('/api/manage', appRouter);

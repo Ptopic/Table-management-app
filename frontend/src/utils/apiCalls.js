@@ -51,6 +51,15 @@ export const deleteTable = async (tableId) => {
 	}
 };
 
+export const getAllReservations = async (date, time) => {
+	try {
+		const { data } = await client.get('/manage/reservations', {});
+		return data;
+	} catch (error) {
+		return catchError(error);
+	}
+};
+
 export const getReservations = async (date, time) => {
 	try {
 		console.log(date);
@@ -58,6 +67,56 @@ export const getReservations = async (date, time) => {
 		const { data } = await client.get('/manage/reservations-datetime', {
 			params: { ReservationDate: date, ReservationTime: time },
 		});
+		return data;
+	} catch (error) {
+		return catchError(error);
+	}
+};
+
+export const createReservation = async (values) => {
+	try {
+		const { data } = await client.post('/manage/reservation', {
+			...values,
+		});
+		console.log(data);
+		return data;
+	} catch (error) {
+		return catchError(error);
+	}
+};
+
+export const deleteReservation = async (id) => {
+	try {
+		const { data } = await client.delete('/manage/reservation', {
+			data: { ReservationId: id },
+		});
+		console.log(data);
+		return data;
+	} catch (error) {
+		return catchError(error);
+	}
+};
+
+export const updateReservation = async (values, id) => {
+	try {
+		const { data } = await client.put('/manage/reservation', {
+			...values,
+			ReservationId: id,
+		});
+		console.log(data);
+		return data;
+	} catch (error) {
+		return catchError(error);
+	}
+};
+
+export const assignTableToReservation = async (tableId, reservationId) => {
+	try {
+		const { data } = await client.post('/manage/reservation-table', {
+			ReservationId: reservationId,
+			TableId: tableId,
+		});
+		console.log(data);
 		return data;
 	} catch (error) {
 		return catchError(error);

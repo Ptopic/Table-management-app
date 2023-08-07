@@ -1,0 +1,96 @@
+.rezervacije-container {
+    margin-left: 250px;
+    padding: 2rem;
+}
+
+.rezervacije-container button {
+    border: none;
+    outline: none;
+    border-radius: 1.2rem;
+    padding: 1rem 3.5rem;
+    margin-top: 1.4rem;
+}
+
+.rezervacije-container h1 {
+    font-size: 3.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.rezervacije-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+.rezervacija {
+    padding: 2rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .09);
+}
+
+.rezervacija div:not(:last-child) {
+    padding-top: 1.4rem;
+    padding-bottom: .4rem;
+}
+
+.rezervacija div:last-child {
+    padding-top: 1.4rem;
+}
+
+.rezervacija h2 {
+    font-size: 2.2rem;
+}
+
+.rezervacija p {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.rezervation-data {
+    font-size: 1.4rem;
+    font-weight: 400 !important;
+}
+
+.delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.delete-modal-content {
+    background-color: white;
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+}
+
+.delete-modal-content h1 {
+    font-size: 2.4rem;
+}
+
+.delete-modal-buttons {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-modal-buttons button:not(:last-child) {
+    margin-right: 1.4rem;
+}
+
+.delete-modal-buttons button {
+    font-size: 1.8rem;
+    border: none;
+    outline: none;
+    padding: 1rem 3.5rem;
+    border-radius: 0.6rem;
+}

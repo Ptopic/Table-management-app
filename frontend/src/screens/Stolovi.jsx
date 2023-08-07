@@ -15,8 +15,10 @@ function Stolovi() {
 	const getData = async () => {
 		const res = await getTables();
 		const data = res.msg;
-		setTables(data);
-		console.log(data);
+		if (res.success === true) {
+			setTables(data);
+			console.log(data);
+		}
 	};
 
 	const [tables, setTables] = useState([]);
@@ -119,6 +121,7 @@ function Stolovi() {
 				<button onClick={() => setAddTable(true)}>Dodaj stol</button>
 
 				<div className="stolovi-table">
+					{tables.length == 0 && <h2>Nema stolova</h2>}
 					{tables.map((table, index) => {
 						return (
 							<StolRow

@@ -3,7 +3,7 @@ import '../screens/Stolovi.css';
 import closeImg from '../assets/images/close.png';
 import editIcon from '../assets/images/edit.png';
 import deleteIcon from '../assets/images/delete.png';
-import { editTableData } from '../utils/apiCalls';
+import { editTableData, deleteTable } from '../utils/apiCalls';
 import { useNavigate } from 'react-router-dom';
 
 // Formik, yup
@@ -15,6 +15,7 @@ function StolRow({ id, numberOfSeats }) {
 	const [deleteModal, setDeleteModal] = useState(false);
 	const [editModal, setEditModal] = useState(false);
 	const handleDelete = () => {
+		console.log(id);
 		setDeleteModal(true);
 	};
 
@@ -72,7 +73,7 @@ function StolRow({ id, numberOfSeats }) {
 			{deleteModal && (
 				<div className="delete-modal">
 					<div className="delete-modal-content">
-						<h1>Želiš li obrisati stol broj {currentTable}?</h1>
+						<h1>Želiš li obrisati stol broj {id}?</h1>
 						<div className="delete-modal-buttons">
 							<button
 								onClick={() => setDeleteModal(false)}

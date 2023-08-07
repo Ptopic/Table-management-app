@@ -24,7 +24,6 @@ exports.createReservation = async (req, res) => {
 		!ReservationTime ||
 		!ContactPhone
 	) {
-		console.log(req.body);
 		return sendResponse(400, 'Reservation data missing', res);
 	}
 
@@ -73,7 +72,6 @@ exports.createReservation = async (req, res) => {
 exports.deleteReservation = async (req, res) => {
 	const { ReservationId } = req.body;
 
-	console.log(req.body);
 	if (!ReservationId) {
 		return sendResponse(400, 'Reservation id missing', res);
 	}
@@ -113,7 +111,8 @@ exports.updateReservation = async (req, res) => {
 		!ReservationTime ||
 		!ContactPhone
 	) {
-		return sendResponse(400, 'Reservation data missing');
+		console.log(req.body);
+		return sendResponse(400, 'Reservation data missing', res);
 	}
 
 	const updateQuery = `
@@ -153,7 +152,7 @@ exports.getAllReservations = async (req, res) => {
 		}
 
 		if (result.length <= 0) {
-			return sendResponse(400, 'No reservations', res);
+			return sendResponse(404, 'No reservations', res);
 		}
 
 		return res.status(200).send({ success: true, msg: result });
@@ -261,8 +260,6 @@ exports.addTableToReservation = async (req, res) => {
 				res
 			);
 		}
-
-		console.log(result);
 
 		// Add table to reservation
 		const assignTableToReservation = `
