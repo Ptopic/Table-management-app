@@ -14,12 +14,8 @@
 
 ## Home screen
 
-<div align='center'>
-
 Home screen with no reserved tables
-<img src="![image](https://github.com/Ptopic/Table-management-app/assets/45322112/e3d08ed4-790b-4263-8f5b-444cfd9cfd45)">
-
-</div>
+<img src="![image](https://github.com/Ptopic/Table-management-app/assets/45322112/2ccf6edd-2562-4215-b948-dd44c1077059)">
 
 <br>
 
