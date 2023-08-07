@@ -24,53 +24,58 @@ exports.createReservation = async (req, res) => {
 		!ReservationTime ||
 		!ContactPhone
 	) {
-		return sendResponse(400, 'Reservation data missing');
+		console.log(req.body);
+		return sendResponse(400, 'Reservation data missing', res);
 	}
+
+	const insertQuery = `
+	INSERT INTO Reservation
+	(Firstname, Lastname, NumberOfPeople, ReservationDate, ReservationTime, ContactPhone) 
+	VALUES
+	("${Firstname}", "${Lastname}", "${NumberOfPeople}", "${ReservationDate}", "${ReservationTime}", "${ContactPhone}")
+	`;
+
+	db.query(insertQuery, (err, result) => {
+		if (err) {
+			return sendResponse(400, 'Failed to create reservation', res);
+		}
+
+		return res.status(200).send({
+			success: true,
+			msg: 'Created reservation',
+			data: result.insertId,
+		});
+	});
 
 	// Check if reservation already exists for given date and time
 
-	const checkIfExists = `
-	SELECT * FROM Reservation WHERE ReservationDate="${ReservationDate}" AND ReservationTime="${ReservationTime}"
-	`;
+	// const checkIfExists = `
+	// SELECT * FROM Reservation WHERE ReservationDate="${ReservationDate}" AND ReservationTime="${ReservationTime}"
+	// `;
 
-	db.query(checkIfExists, (err, result) => {
-		if (err) {
-			return sendResponse(400, 'Failed to fetch reservation', res);
-		}
+	// db.query(checkIfExists, (err, result) => {
+	// 	if (err) {
+	// 		return sendResponse(400, 'Failed to fetch reservation', res);
+	// 	}
 
-		if (result.length > 0) {
-			return sendResponse(
-				400,
-				'Reservation with given date and time already exists',
-				res
-			);
-		}
+	// 	if (result.length > 0) {
+	// 		return sendResponse(
+	// 			400,
+	// 			'Reservation with given date and time already exists',
+	// 			res
+	// 		);
+	// 	}
 
-		const insertQuery = `
-		INSERT INTO Reservation
-		(Firstname, Lastname, NumberOfPeople, ReservationDate, ReservationTime, ContactPhone) 
-		VALUES
-		("${Firstname}", "${Lastname}", "${NumberOfPeople}", "${ReservationDate}", "${ReservationTime}", "${ContactPhone}")
-		`;
-
-		db.query(insertQuery, (err, result) => {
-			if (err) {
-				return sendResponse(400, 'Failed to create reservation', res);
-			}
-
-			return res
-				.status(200)
-				.send({ success: true, msg: `Created reservation` });
-		});
-	});
+	// });
 };
 
 // Delete reservation
 exports.deleteReservation = async (req, res) => {
 	const { ReservationId } = req.body;
 
+	console.log(req.body);
 	if (!ReservationId) {
-		return sendResponse(400, 'Reservation id missing');
+		return sendResponse(400, 'Reservation id missing', res);
 	}
 
 	const deleteQuery = `
@@ -273,7 +278,7 @@ exports.addTableToReservation = async (req, res) => {
 			}
 
 			return res.status(200).send({
-				success: 'true',
+				success: true,
 				msg: `Table ${TableId} assigned to reservation`,
 			});
 		});
@@ -314,7 +319,7 @@ exports.removeTableFromReservation = async (req, res) => {
 			}
 
 			return res.status(200).send({
-				success: 'true',
+				success: true,
 				msg: `Table ${TableId} removed to reservation`,
 			});
 		});
