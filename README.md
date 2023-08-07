@@ -16,7 +16,8 @@
 
 <div align='center'>
 
-<img src="">
+Home screen with no reserved tables
+<img src="![image](https://github.com/Ptopic/Table-management-app/assets/45322112/e3d08ed4-790b-4263-8f5b-444cfd9cfd45)">
 
 </div>
 
@@ -24,7 +25,8 @@
 
 <div align='center'>
 
-<img src="">
+Home screen with one reserved table
+<img src="![image](https://github.com/Ptopic/Table-management-app/assets/45322112/759384ac-edf5-48c4-9074-da134d54b70c)">
 
 </div>
 
