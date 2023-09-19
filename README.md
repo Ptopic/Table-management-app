@@ -15,39 +15,47 @@
 ## Home screen
 
 Home screen with no reserved tables
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/8976efa3-e1f3-4517-bfcb-bf78f89d7a5b">
+![t1](https://github.com/Ptopic/Table-management-app/assets/45322112/47b87ece-4276-4db0-a72c-83851b491df7)
 
 <br>
 
 Home screen with one reserved table
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/759384ac-edf5-48c4-9074-da134d54b70c">
+![t2](https://github.com/Ptopic/Table-management-app/assets/45322112/9b94b1a3-1757-440d-a0bc-6b34df059864)
 
 <br>
 
 Clock adjustment screen
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/af443350-bdf5-4d2c-bf8f-fcc0c2f54f2e">
+![t3](https://github.com/Ptopic/Table-management-app/assets/45322112/32756adb-a87a-41ca-be76-15a85cea87ea)
+
+
+<br>
+
+Add reservation to table form
+![t4](https://github.com/Ptopic/Table-management-app/assets/45322112/3e5452ad-0281-4de9-9d68-605e2589f3f5)
+
+
 
 <br>
 
 ## Stolovi screen
 
 Stolovi screen
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/cdbc4ffa-b32a-404a-ae29-d9622184c41d">
+![t5](https://github.com/Ptopic/Table-management-app/assets/45322112/0307588f-2964-4b90-bfce-728d42284ec8)
 
 <br>
 
 Add stol
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/8bf56ba1-0bb0-49e5-b129-f7f1e7dc9c39">
+![t6](https://github.com/Ptopic/Table-management-app/assets/45322112/0907b616-e99c-4c4c-99d2-7bb9664f2b8d)
 
 <br>
 
 Edit stol
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/ce1c78c0-d057-4669-a4a9-03b40db5dbc1">
+![t7](https://github.com/Ptopic/Table-management-app/assets/45322112/c7b25ea6-1f78-42dc-8588-37c35da3fa2f)
 
 <br>
 
 Remove stol
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/4c16a436-8ee9-4d6a-80d4-d4b5e4174a1a">
+![t8](https://github.com/Ptopic/Table-management-app/assets/45322112/d14ffc10-5666-42a2-83df-5cc4d3fd40c3)
 
 <br>
 
@@ -55,12 +63,13 @@ Remove stol
 ## Rezervacije screen
 
 Rezervacije screen
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/92902f59-252a-425e-a8f7-c0387e295339">
+![t9](https://github.com/Ptopic/Table-management-app/assets/45322112/59117cd9-f908-4bee-8f81-5754be76895d)
 
 <br>
 
 Remove rezervacija
-<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/0cfba2d9-56f8-4a8d-bbaa-148c16634fd5">
+![t10](https://github.com/Ptopic/Table-management-app/assets/45322112/17918b9e-4453-4370-802e-b03d840046e9)
+
 
 <br>
 
