@@ -15,7 +15,7 @@
 ## Home screen
 
 Home screen with no reserved tables
-![t1](https://github.com/Ptopic/Table-management-app/assets/45322112/47b87ece-4276-4db0-a72c-83851b491df7)
+<img src="https://github.com/Ptopic/Table-management-app/assets/45322112/47b87ece-4276-4db0-a72c-83851b491df7"/>
 
 <br>
 
